@@ -24,7 +24,7 @@ export function RegisterForm() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-5">
         <Input
           type="text"
           name="name"
