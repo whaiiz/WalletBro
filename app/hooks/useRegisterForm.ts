@@ -103,14 +103,67 @@ export function useRegisterForm() {
     setMessage(null);
 
     try {
-      // TODO: Implementar integração com API de registo
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      throw new Error("Registo não implementado");
+      const nameParts = formData.name.trim().split(" ");
+      const firstName = nameParts[0];
+      const lastName = nameParts.slice(1).join(" ") || firstName;
+
+      const dateOfBirth = formData.dob ? new Date(formData.dob) : null;
+
+      const payload = {
+        firstName,
+        lastName,
+        email: formData.email,
+        password: formData.password,
+        dateOfBirth,
+      };
+
+      const response = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => null);
+        const errorMessage =
+          errorData?.message ||
+          errorData?.error ||
+          `Erro ao registar (${response.status})`;
+        throw new Error(errorMessage);
+      }
+
+      const data = await response.json();
+
+      setMessage({
+        type: "success",
+        text: "Conta criada com sucesso! Redirecionando...",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        dob: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+      });
+
+      // Redirect to login after 1.5 seconds
+      setTimeout(() => {
+        window.location.href = "/login";
+      }, 1500);
     } catch (err) {
+      const errorText =
+        err instanceof Error ? err.message : "Erro ao registar. Tente novamente.";
+
       setMessage({
         type: "error",
-        text: err instanceof Error ? err.message : "Erro no registo",
+        text: errorText,
       });
+
+      console.error("Register error:", err);
     } finally {
       setLoading(false);
     }
