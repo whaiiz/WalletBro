@@ -5,12 +5,14 @@ if (process.env.NODE_ENV === "development") {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 }
 
+// Backend base URL (set in environment). Falls back to localhost for development.
+const BACKEND_URL = process.env.BACKEND_URL || "https://localhost:44339";
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    //TODO: CHANGE HARDCODED URL
-    const response = await fetch("https://localhost:44339/user/register", {
+    const response = await fetch(`${BACKEND_URL}/user/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
