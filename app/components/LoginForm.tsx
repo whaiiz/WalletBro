@@ -84,14 +84,14 @@ export function LoginForm() {
       </div>
 
       {/* Social Login Buttons */}
-      <div className="space-y-3">
+      {/* <div className="space-y-3">
         <Button variant="secondary" disabled>
           🔵 Continuar com Google
         </Button>
         <Button variant="secondary" disabled>
           🔵 Continuar com Microsoft
         </Button>
-      </div>
+      </div> */}
 
       {/* Footer */}
       <p className="mt-6 text-center text-sm text-gray-400">

@@ -106,14 +106,14 @@ export function RegisterForm() {
         <div className="flex-1 border-t border-gray-800"></div>
       </div>
 
-      <div className="space-y-3">
+      {/* <div className="space-y-3">
         <Button variant="secondary" disabled>
           🔵 Continuar com Google
         </Button>
         <Button variant="secondary" disabled>
           🔵 Continuar com Microsoft
         </Button>
-      </div>
+      </div> */}
 
       <p className="mt-6 text-center text-sm text-gray-400">
         Já tem conta? {" "}
