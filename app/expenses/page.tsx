@@ -5,6 +5,7 @@ import { mockExpenses } from "@/app/lib/mockExpenses";
 import { ExpenseStats } from "@/app/components/expenses/ExpenseStats";
 import { ExpenseTable } from "@/app/components/expenses/ExpenseTable";
 import { ExpenseChart } from "@/app/components/expenses/ExpenseChart";
+import { Navbar } from "@/app/components/Navigation/Navbar";
 
 export default function ExpensesPage() {
   const [sortBy, setSortBy] = useState<"date" | "amount">("date");
@@ -34,19 +35,21 @@ export default function ExpensesPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white p-4 md:p-8">
-      <div className="max-w-7xl mx-auto space-y-8">
-        {/* Header */}
-        <div>
-          <h1 className="text-4xl font-bold mb-2">Despesas</h1>
-          <p className="text-gray-400">Gerencie e visualize todas as suas despesas</p>
-        </div>
+    <>
+      <Navbar title="Despesas" />
+      <div className="min-h-screen bg-gray-950 text-white p-4 md:p-8">
+        <div className="max-w-7xl mx-auto space-y-8">
+          {/* Header */}
+          <div>
+            <h1 className="text-4xl font-bold mb-2">Despesas</h1>
+            <p className="text-gray-400">Gerencie e visualize todas as suas despesas</p>
+          </div>
 
-        {/* Stats */}
-        <ExpenseStats expenses={filteredExpenses} />
+          {/* Stats */}
+          <ExpenseStats expenses={filteredExpenses} />
 
-        {/* Chart */}
-        <ExpenseChart expenses={mockExpenses} />
+          {/* Chart */}
+          <ExpenseChart expenses={mockExpenses} />
 
         {/* Filters and Table */}
         <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
@@ -94,5 +97,6 @@ export default function ExpensesPage() {
         )}
       </div>
     </div>
+    </>
   );
 }
