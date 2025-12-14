@@ -12,6 +12,7 @@ export function Navbar({ title }: NavbarProps) {
 
   const isInvoicesPage = pathname === "/invoices";
   const isExpensesPage = pathname === "/expenses";
+  const isUploadPage = pathname === "/upload";
 
   return (
     <nav className="bg-gray-800 border-b border-gray-700 sticky top-0 z-50">
@@ -61,6 +62,25 @@ export function Navbar({ title }: NavbarProps) {
                 <path d="M8.16 2.75a.75.75 0 00-1.32 0l-1.424 4.573H1.75a.75.75 0 00-.733.567.747.747 0 00.208.816l3.829 2.864-.96 3.081a.75.75 0 00.275.853.75.75 0 00.836-.15l3.095-2.323 3.095 2.323a.75.75 0 00.836.15.75.75 0 00.275-.853l-.96-3.081 3.829-2.864a.75.75 0 00-.734-1.383h-3.663L8.16 2.75z" />
               </svg>
               Despesas
+            </Link>
+
+            <Link
+              href="/upload"
+              className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                isUploadPage
+                  ? "text-blue-400 bg-gray-700"
+                  : "text-gray-300 hover:text-white hover:bg-gray-700"
+              }`}
+            >
+              <svg
+                className="w-4 h-4"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M3 17a1 1 0 001 1h12a1 1 0 001-1v-4a1 1 0 10-2 0v3H5v-3a1 1 0 10-2 0v4z" />
+                <path d="M7 9a1 1 0 011-1h2V3a1 1 0 112 0v5h2a1 1 0 110 2h-2v5a1 1 0 11-2 0v-5H8a1 1 0 01-1-1z" />
+              </svg>
+              Upload
             </Link>
           </div>
 
