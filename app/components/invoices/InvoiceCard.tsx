@@ -1,18 +1,23 @@
 "use client";
 
 import { Invoice, ExpenseDetail } from "@/app/types/invoice";
+import { useState } from "react";
+import InvoiceEditor from "./InvoiceEditor";
 
 interface InvoiceCardProps {
   invoice: Invoice;
   isExpanded: boolean;
   onToggle: () => void;
+  onUpdate?: (updated: Invoice) => void;
 }
 
 export function InvoiceCard({
   invoice,
   isExpanded,
   onToggle,
+  onUpdate,
 }: InvoiceCardProps) {
+  const [editing, setEditing] = useState(false);
   const totalAmount = invoice.expenses.reduce(
     (sum, expense) => sum + expense.unitPrice,
     0
@@ -48,21 +53,33 @@ export function InvoiceCard({
               {invoice.expenses.length} itens
             </p>
           </div>
-          <svg
-            className={`w-6 h-6 text-gray-400 transition-transform duration-300 ${
-              isExpanded ? "rotate-180" : ""
-            }`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setEditing(true);
+              }}
+              className="text-sm text-gray-300 hover:text-white bg-gray-700 px-2 py-1 rounded"
+            >
+              Editar
+            </button>
+
+            <svg
+              className={`w-6 h-6 text-gray-400 transition-transform duration-300 ${
+                isExpanded ? "rotate-180" : ""
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </div>
         </div>
       </button>
 
@@ -70,6 +87,17 @@ export function InvoiceCard({
         <div className="border-t border-gray-700 px-6 py-4 bg-gray-900">
           <ExpenseTable expenses={invoice.expenses} />
         </div>
+      )}
+
+      {editing && (
+        <InvoiceEditor
+          invoice={invoice}
+          onCancel={() => setEditing(false)}
+          onSave={(updated) => {
+            setEditing(false);
+            onUpdate?.(updated);
+          }}
+        />
       )}
     </div>
   );
