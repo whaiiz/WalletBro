@@ -10,12 +10,12 @@ interface InvoiceListProps {
 
 export function InvoiceList({ invoices }: InvoiceListProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [items, setItems] = useState<Invoice[]>(invoices);
 
-  const totalInvoices = invoices.length;
-  const totalAmount = invoices.reduce(
+  const totalInvoices = items.length;
+  const totalAmount = items.reduce(
     (sum, invoice) =>
-      sum +
-      invoice.expenses.reduce((expSum, exp) => expSum + exp.unitPrice, 0),
+      sum + invoice.expenses.reduce((expSum, exp) => expSum + exp.unitPrice, 0),
     0
   );
 
@@ -48,17 +48,20 @@ export function InvoiceList({ invoices }: InvoiceListProps) {
       {/* Invoices List */}
       <div className="space-y-3">
         <h2 className="text-xl font-semibold text-white mb-4">Faturas</h2>
-        {invoices.length === 0 ? (
+        {items.length === 0 ? (
           <div className="text-center py-12 bg-gray-800 rounded-lg border border-gray-700">
             <p className="text-gray-400">Nenhuma fatura encontrada</p>
           </div>
         ) : (
-          invoices.map((invoice) => (
+          items.map((invoice) => (
             <InvoiceCard
               key={invoice.id}
               invoice={invoice}
               isExpanded={expandedId === invoice.id}
               onToggle={() => handleToggle(invoice.id)}
+              onUpdate={(updated) => {
+                setItems((prev) => prev.map((p) => (p.id === updated.id ? updated : p)));
+              }}
             />
           ))
         )}
