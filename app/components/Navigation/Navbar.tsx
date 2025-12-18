@@ -86,7 +86,10 @@ export function Navbar({ title }: NavbarProps) {
 
           {/* User Actions */}
           <div className="flex items-center gap-4">
-            <button className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="/"
+              className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+            >
               <svg
                 className="w-5 h-5"
                 fill="currentColor"
@@ -95,7 +98,8 @@ export function Navbar({ title }: NavbarProps) {
                 <path d="M10.5 1.5H19A1.5 1.5 0 0120.5 3v16a1.5 1.5 0 01-1.5 1.5H10.5a.75.75 0 010-1.5H19a.75.75 0 00.75-.75V3a.75.75 0 00-.75-.75H10.5a.75.75 0 010-1.5z" />
                 <path d="M5.22 4.97a.75.75 0 00-1.06 1.06L6.44 8H1.75a.75.75 0 000 1.5h4.69l-2.28 2.28a.75.75 0 101.06 1.06l3.5-3.5a.75.75 0 000-1.06l-3.5-3.5z" />
               </svg>
-            </button>
+              <span className="hidden md:inline">Sair</span>
+            </Link>
           </div>
         </div>
       </div>
