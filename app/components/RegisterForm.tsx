@@ -14,8 +14,8 @@ export function RegisterForm() {
   return (
     <Card>
       <div className="mb-6 text-center">
-        <h1 className="text-3xl font-bold text-white">Criar Conta</h1>
-        <p className="text-gray-400">Registe-se para começar a usar o WalletBro</p>
+        <h1 className="text-3xl font-bold text-white">Create Account</h1>
+        <p className="text-gray-400">Sign up to start using WalletBro</p>
       </div>
 
       {message && (
@@ -28,7 +28,7 @@ export function RegisterForm() {
         <Input
           type="text"
           name="firstName"
-          label="Nome"
+          label="First Name"
           placeholder="Your first name"
           value={formData.firstName}
           onChange={handleInputChange}
@@ -39,7 +39,7 @@ export function RegisterForm() {
         <Input
           type="text"
           name="lastName"
-          label="Sobrenome"
+          label="Last Name"
           placeholder="Your last name"
           value={formData.lastName}
           onChange={handleInputChange}
@@ -50,7 +50,7 @@ export function RegisterForm() {
         <Input
           type="date"
           name="dob"
-          label="Data de Nascimento"
+          label="Date of Birth"
           placeholder=""
           value={formData.dob}
           onChange={handleInputChange}
@@ -62,7 +62,7 @@ export function RegisterForm() {
           type="email"
           name="email"
           label="Email"
-          placeholder="seu@email.com"
+          placeholder="your@email.com"
           value={formData.email}
           onChange={handleInputChange}
           error={errors.email}
@@ -73,7 +73,7 @@ export function RegisterForm() {
         <Input
           type="password"
           name="password"
-          label="Palavra-passe"
+          label="Password"
           placeholder="••••••••"
           value={formData.password}
           onChange={handleInputChange}
@@ -85,7 +85,7 @@ export function RegisterForm() {
         <Input
           type="password"
           name="confirmPassword"
-          label="Confirmar Palavra-passe"
+          label="Confirm Password"
           placeholder="••••••••"
           value={formData.confirmPassword}
           onChange={handleInputChange}
@@ -102,18 +102,18 @@ export function RegisterForm() {
             defaultChecked
           />
           <label htmlFor="terms" className="text-gray-400">
-            Aceito os <span className="text-blue-500">termos e condições</span>
+            I accept the <span className="text-blue-500">terms and conditions</span>
           </label>
         </div>
 
         <Button type="submit" loading={loading}>
-          Registar
+          Register
         </Button>
       </form>
 
       <div className="my-6 flex items-center gap-3">
         <div className="flex-1 border-t border-gray-800"></div>
-        <span className="text-xs text-gray-500">OU</span>
+        <span className="text-xs text-gray-500">OR</span>
         <div className="flex-1 border-t border-gray-800"></div>
       </div>
 
@@ -127,9 +127,9 @@ export function RegisterForm() {
       </div> */}
 
       <p className="mt-6 text-center text-sm text-gray-400">
-        Já tem conta? {" "}
+        Already have an account? {" "}
         <Link href="/login" className="text-blue-500 font-medium hover:text-blue-400">
-          Entrar
+          Sign in
         </Link>
       </p>
     </Card>
