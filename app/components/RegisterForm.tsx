@@ -27,12 +27,23 @@ export function RegisterForm() {
       <form onSubmit={handleSubmit} className="space-y-5">
         <Input
           type="text"
-          name="name"
+          name="firstName"
           label="Nome"
-          placeholder="Seu nome completo"
-          value={formData.name}
+          placeholder="Your first name"
+          value={formData.firstName}
           onChange={handleInputChange}
-          error={errors.name}
+          error={errors.firstName}
+          icon="👤"
+        />       
+
+        <Input
+          type="text"
+          name="lastName"
+          label="Sobrenome"
+          placeholder="Your last name"
+          value={formData.lastName}
+          onChange={handleInputChange}
+          error={errors.lastName}
           icon="👤"
         />
 

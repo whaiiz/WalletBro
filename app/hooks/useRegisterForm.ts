@@ -3,7 +3,8 @@
 import { useState } from "react";
 
 interface RegisterFormState {
-  name: string;
+  firstName: string;
+  lastName: string;
   dob?: string;
   email: string;
   password: string;
@@ -11,7 +12,8 @@ interface RegisterFormState {
 }
 
 interface RegisterFormErrors {
-  name?: string;
+  firstName?: string;
+  lastName?: string;
   dob?: string;
   email?: string;
   password?: string;
@@ -20,7 +22,8 @@ interface RegisterFormErrors {
 
 export function useRegisterForm() {
   const [formData, setFormData] = useState<RegisterFormState>({
-    name: "",
+    firstName: "",
+    lastName: "",
     dob: "",
     email: "",
     password: "",
@@ -36,8 +39,12 @@ export function useRegisterForm() {
   const validateForm = (): boolean => {
     const newErrors: RegisterFormErrors = {};
 
-    if (!formData.name || formData.name.trim().length < 2) {
-      newErrors.name = "Nome é obrigatório (mín. 2 caracteres)";
+    if (!formData.firstName) {
+      newErrors.firstName = "Nome é obrigatório";
+    }
+
+    if (!formData.lastName) {
+      newErrors.lastName = "Sobrenome é obrigatório";
     }
 
     // Data de nascimento
@@ -103,15 +110,11 @@ export function useRegisterForm() {
     setMessage(null);
 
     try {
-      const nameParts = formData.name.trim().split(" ");
-      const firstName = nameParts[0];
-      const lastName = nameParts.slice(1).join(" ") || firstName;
-
       const dateOfBirth = formData.dob ? new Date(formData.dob) : null;
 
       const payload = {
-        firstName,
-        lastName,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
         email: formData.email,
         password: formData.password,
         dateOfBirth,
@@ -143,7 +146,8 @@ export function useRegisterForm() {
 
       // Reset form
       setFormData({
-        name: "",
+        firstName: "",
+        lastName: "",
         dob: "",
         email: "",
         password: "",
