@@ -4,33 +4,33 @@ export function FeaturesSection() {
   const features = [
     {
       icon: "💰",
-      title: "Gestão de Despesas",
-      description: "Categorize e acompanhe todas as suas despesas com facilidade",
+      title: "Expense Management",
+      description: "Categorize and track all your expenses with ease",
     },
     {
       icon: "📊",
-      title: "Relatórios Detalhados",
-      description: "Visualize gráficos e estatísticas do seu gastos em tempo real",
+      title: "Detailed Reports",
+      description: "View charts and spending stats in real time",
     },
     {
       icon: "🎯",
-      title: "Metas Financeiras",
-      description: "Defina e acompanhe metas de poupança personalizadas",
+      title: "Financial Goals",
+      description: "Set and track personalized savings goals",
     },
     {
       icon: "🔒",
-      title: "Segurança Premium",
-      description: "Encriptação de ponta a ponta para proteger seus dados",
+      title: "Premium Security",
+      description: "End-to-end encryption to protect your data",
     },
     {
       icon: "📱",
-      title: "Acesso Offline",
-      description: "Use a app mesmo sem conexão à internet",
+      title: "Offline Access",
+      description: "Use the app even without an internet connection",
     },
     {
       icon: "🔄",
-      title: "Sincronização",
-      description: "Sincronize seus dados em todos os seus dispositivos",
+      title: "Sync",
+      description: "Sync your data across all your devices",
     },
   ];
 
@@ -39,11 +39,11 @@ export function FeaturesSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Funcionalidades Principais
-          </h2>
-          <p className="text-gray-400 text-lg">
-            Tudo que você precisa para ter total controlo das suas finanças
-          </p>
+              Key Features
+            </h2>
+            <p className="text-gray-400 text-lg">
+              Everything you need to have full control of your finances
+            </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -8,10 +8,10 @@ export function CTASection() {
       <div className="max-w-4xl mx-auto text-center space-y-8">
         <div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Pronto para começar?
+            Ready to get started?
           </h2>
           <p className="text-xl text-blue-100">
-            Junte-se a milhares de utilizadores que já confiam no WalletBro
+            Join thousands of users who already trust WalletBro
           </p>
         </div>
 
@@ -19,11 +19,11 @@ export function CTASection() {
           href="/signup"
           className="inline-block px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 transition-colors text-lg"
         >
-          Criar Conta Grátis
+          Create Free Account
         </Link>
 
         <p className="text-blue-100 text-sm">
-          Sem cartão de crédito necessário. Acesso imediato a todas as funcionalidades.
+          No credit card required. Immediate access to all features.
         </p>
       </div>
     </section>
