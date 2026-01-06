@@ -9,11 +9,11 @@ import { Navbar } from "@/app/components/Navigation/Navbar";
 
 export default function ExpensesPage() {
   const [sortBy, setSortBy] = useState<"date" | "amount">("date");
-  const [filterCategory, setFilterCategory] = useState<string>("Todas");
+  const [filterCategory, setFilterCategory] = useState<string>("All");
 
   // Get unique categories
   const categories = [
-    "Todas",
+    "All",
     ...Array.from(new Set(mockExpenses.map((e) => e.category))),
   ];
 
@@ -36,13 +36,13 @@ export default function ExpensesPage() {
 
   return (
     <>
-      <Navbar title="Despesas" />
+      <Navbar title="Expenses" />
       <div className="min-h-screen bg-gray-950 text-white p-4 md:p-8">
         <div className="max-w-7xl mx-auto space-y-8">
           {/* Header */}
           <div>
-            <h1 className="text-4xl font-bold mb-2">Despesas</h1>
-            <p className="text-gray-400">Gerencie e visualize todas as suas despesas</p>
+            <h1 className="text-4xl font-bold mb-2">Expenses</h1>
+            <p className="text-gray-400">Manage and view all your expenses</p>
           </div>
 
           {/* Stats */}
@@ -56,7 +56,7 @@ export default function ExpensesPage() {
           <div className="flex flex-col md:flex-row gap-4 mb-6">
             <div className="flex-1">
               <label className="block text-sm text-gray-400 mb-2">
-                Categoria
+                Category
               </label>
               <select
                 value={filterCategory}
@@ -73,15 +73,15 @@ export default function ExpensesPage() {
 
             <div className="flex-1">
               <label className="block text-sm text-gray-400 mb-2">
-                Ordenar por
+                Sort by
               </label>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as "date" | "amount")}
                 className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-blue-500 focus:outline-none"
               >
-                <option value="date">Data (Mais Recente)</option>
-                <option value="amount">Valor (Maior)</option>
+                <option value="date">Date (Most Recent)</option>
+                <option value="amount">Amount (Highest)</option>
               </select>
             </div>
           </div>
@@ -92,7 +92,7 @@ export default function ExpensesPage() {
         {/* Empty state */}
         {filteredExpenses.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-400">Nenhuma despesa encontrada</p>
+            <p className="text-gray-400">No expenses found</p>
           </div>
         )}
       </div>

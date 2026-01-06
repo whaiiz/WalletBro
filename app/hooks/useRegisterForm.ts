@@ -40,11 +40,11 @@ export function useRegisterForm() {
     const newErrors: RegisterFormErrors = {};
 
     if (!formData.firstName) {
-      newErrors.firstName = "Nome é obrigatório";
+      newErrors.firstName = "Name is required";
     }
 
     if (!formData.lastName) {
-      newErrors.lastName = "Sobrenome é obrigatório";
+      newErrors.lastName = "Last name is required";
     }
 
     // Date of birth

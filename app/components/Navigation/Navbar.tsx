@@ -43,7 +43,7 @@ export function Navbar({ title }: NavbarProps) {
               >
                 <path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" />
               </svg>
-              Faturas
+              Invoices
             </Link>
 
             <Link
@@ -61,7 +61,7 @@ export function Navbar({ title }: NavbarProps) {
               >
                 <path d="M8.16 2.75a.75.75 0 00-1.32 0l-1.424 4.573H1.75a.75.75 0 00-.733.567.747.747 0 00.208.816l3.829 2.864-.96 3.081a.75.75 0 00.275.853.75.75 0 00.836-.15l3.095-2.323 3.095 2.323a.75.75 0 00.836.15.75.75 0 00.275-.853l-.96-3.081 3.829-2.864a.75.75 0 00-.734-1.383h-3.663L8.16 2.75z" />
               </svg>
-              Despesas
+              Expenses
             </Link>
 
             <Link
@@ -98,7 +98,7 @@ export function Navbar({ title }: NavbarProps) {
                 <path d="M10.5 1.5H19A1.5 1.5 0 0120.5 3v16a1.5 1.5 0 01-1.5 1.5H10.5a.75.75 0 010-1.5H19a.75.75 0 00.75-.75V3a.75.75 0 00-.75-.75H10.5a.75.75 0 010-1.5z" />
                 <path d="M5.22 4.97a.75.75 0 00-1.06 1.06L6.44 8H1.75a.75.75 0 000 1.5h4.69l-2.28 2.28a.75.75 0 101.06 1.06l3.5-3.5a.75.75 0 000-1.06l-3.5-3.5z" />
               </svg>
-              <span className="hidden md:inline">Sair</span>
+              <span className="hidden md:inline">Sign out</span>
             </Link>
           </div>
         </div>
