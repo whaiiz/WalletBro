@@ -10,37 +10,37 @@ export function Footer() {
           <div>
             <h3 className="text-white font-bold mb-4">WalletBro</h3>
             <p className="text-gray-400 text-sm">
-              A forma moderna de gerir suas finanças pessoais
+              The modern way to manage your personal finances
             </p>
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">Produto</h4>
+            <h4 className="text-white font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
                 <Link href="#" className="hover:text-blue-400">
-                  Funcionalidades
+                  Features
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-blue-400">
-                  Preços
+                  Pricing
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-blue-400">
-                  Segurança
+                  Security
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">Empresa</h4>
+            <h4 className="text-white font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
                 <Link href="#" className="hover:text-blue-400">
-                  Sobre Nós
+                  About Us
                 </Link>
               </li>
               <li>
@@ -50,7 +50,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="#" className="hover:text-blue-400">
-                  Contactos
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -61,12 +61,12 @@ export function Footer() {
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
                 <Link href="#" className="hover:text-blue-400">
-                  Termos de Serviço
+                  Terms of Service
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-blue-400">
-                  Política de Privacidade
+                  Privacy Policy
                 </Link>
               </li>
               <li>
@@ -80,7 +80,7 @@ export function Footer() {
 
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-            <p>&copy; 2025 WalletBro. Todos os direitos reservados.</p>
+            <p>&copy; 2025 WalletBro. All rights reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
               <Link href="#" className="hover:text-blue-400">
                 Twitter

@@ -1,7 +1,7 @@
 export interface Expense {
   id: string;
   title: string;
-  category: "Alimentação" | "Transporte" | "Saúde" | "Entretenimento" | "Educação" | "Utilidades" | "Outro";
+  category: "Food" | "Transport" | "Health" | "Entertainment" | "Education" | "Utilities" | "Other";
   amount: number;
   date: Date;
   description?: string;

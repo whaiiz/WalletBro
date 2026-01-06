@@ -15,13 +15,13 @@ export function Navigation() {
             href="/login"
             className="px-4 py-2 text-gray-300 hover:text-white transition-colors"
           >
-            Entrar
+            Sign in
           </Link>
           <Link
             href="/signup"
             className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
-            Registar
+            Sign up
           </Link>
         </div>
       </div>
