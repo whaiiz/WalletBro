@@ -119,10 +119,10 @@ export function RegisterForm() {
 
       {/* <div className="space-y-3">
         <Button variant="secondary" disabled>
-          🔵 Continuar com Google
+          🔵 Continue with Google
         </Button>
         <Button variant="secondary" disabled>
-          🔵 Continuar com Microsoft
+          🔵 Continue with Microsoft
         </Button>
       </div> */}
 

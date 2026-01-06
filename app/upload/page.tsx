@@ -84,10 +84,10 @@ export default function UploadPage() {
       }
 
       const json = (await res.json()) as UploadResult;
-      setMessage(`Fatura enviada com sucesso: ${json.url}`);
+      setMessage(`Invoice uploaded successfully: ${json.url}`);
     } catch (err: any) {
       console.error(err);
-      setMessage(err?.message ?? "Erro ao enviar");
+      setMessage(err?.message ?? "Error uploading");
     } finally {
       setUploading(false);
     }
@@ -95,13 +95,12 @@ export default function UploadPage() {
 
   return (
     <>
-      <Navbar title="Upload de Fatura" />
+      <Navbar title="Invoice Upload" />
       <main className="min-h-screen bg-gray-900 py-12 px-4 sm:px-6 lg:px-8 text-white">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-3xl font-bold mb-2">Enviar fatura</h1>
+          <h1 className="text-3xl font-bold mb-2">Upload Invoice</h1>
           <p className="text-gray-400 mb-6">
-            Faça upload de uma fatura em PDF ou imagem (PNG/JPEG). Mostraremos
-            pré-visualização antes do envio.
+            Upload an invoice (PDF or image PNG/JPEG). We'll show a preview before uploading.
           </p>
 
           <div
@@ -109,8 +108,8 @@ export default function UploadPage() {
             onDragOver={onDragOver}
             className="border-2 border-dashed border-gray-700 rounded-lg p-6 text-center mb-4 bg-gray-800 hover:border-gray-600 transition"
           >
-            <p className="text-gray-300 mb-4">Arraste e solte o ficheiro aqui</p>
-            <p className="text-sm text-gray-500 mb-4">ou</p>
+            <p className="text-gray-300 mb-4">Drag and drop the file here</p>
+            <p className="text-sm text-gray-500 mb-4">or</p>
             <div>
               <input
                 ref={inputRef}
@@ -123,15 +122,15 @@ export default function UploadPage() {
                 className="px-4 py-2 bg-blue-600 rounded text-white hover:bg-blue-500"
                 onClick={() => inputRef.current?.click()}
               >
-                Escolher ficheiro
+                Choose file
               </button>
             </div>
           </div>
 
           {fileName && (
             <div className="mb-4">
-              <p className="text-sm text-gray-300">Ficheiro: {fileName}</p>
-              <p className="text-sm text-gray-400">Tipo: {fileType}</p>
+              <p className="text-sm text-gray-300">File: {fileName}</p>
+              <p className="text-sm text-gray-400">Type: {fileType}</p>
             </div>
           )}
 
@@ -153,7 +152,7 @@ export default function UploadPage() {
                 width="100%"
                 height={600}
               >
-                <p className="text-gray-400">Não é possível pré-visualizar o PDF.</p>
+                <p className="text-gray-400">Unable to preview the PDF.</p>
               </object>
             </div>
           )}
@@ -164,10 +163,10 @@ export default function UploadPage() {
               onClick={upload}
               className="px-4 py-2 bg-green-600 rounded disabled:opacity-50"
             >
-              {uploading ? "A enviar..." : "Enviar fatura"}
+              {uploading ? "Uploading..." : "Upload invoice"}
             </button>
             <button onClick={reset} className="px-4 py-2 bg-gray-700 rounded">
-              Cancelar
+              Cancel
             </button>
           </div>
 

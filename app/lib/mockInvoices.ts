@@ -3,12 +3,12 @@ import { Invoice, ExpenseDetail, UnitType } from "@/app/types/invoice";
 export const mockInvoices: Invoice[] = [
   {
     id: "1",
-    name: "Compras Supermercado",
+    name: "Grocery Shopping",
     createdAt: new Date(2025, 11, 1).toISOString(),
     expenses: [
       {
         id: "1-1",
-        name: "Arroz",
+        name: "Rice",
         unitPrice: 2.5,
         unitType: UnitType.Kg,
         invoiceId: "1",
@@ -16,7 +16,7 @@ export const mockInvoices: Invoice[] = [
       },
       {
         id: "1-2",
-        name: "Feijão",
+        name: "Beans",
         unitPrice: 1.8,
         unitType: UnitType.Kg,
         invoiceId: "1",
@@ -24,7 +24,7 @@ export const mockInvoices: Invoice[] = [
       },
       {
         id: "1-3",
-        name: "Leite",
+        name: "Milk",
         unitPrice: 1.2,
         unitType: UnitType.Liter,
         invoiceId: "1",
@@ -34,12 +34,12 @@ export const mockInvoices: Invoice[] = [
   },
   {
     id: "2",
-    name: "Restaurante",
+    name: "Restaurant",
     createdAt: new Date(2025, 11, 5).toISOString(),
     expenses: [
       {
         id: "2-1",
-        name: "Francesinha",
+        name: "Sandwich",
         unitPrice: 12.5,
         unitType: UnitType.Unit,
         invoiceId: "2",
@@ -47,7 +47,7 @@ export const mockInvoices: Invoice[] = [
       },
       {
         id: "2-2",
-        name: "Cerveja",
+        name: "Beer",
         unitPrice: 3.0,
         unitType: UnitType.Unit,
         invoiceId: "2",
@@ -55,7 +55,7 @@ export const mockInvoices: Invoice[] = [
       },
       {
         id: "2-3",
-        name: "Sobremesa",
+        name: "Dessert",
         unitPrice: 6.0,
         unitType: UnitType.Unit,
         invoiceId: "2",
@@ -65,12 +65,12 @@ export const mockInvoices: Invoice[] = [
   },
   {
     id: "3",
-    name: "Combustível",
+    name: "Fuel",
     createdAt: new Date(2025, 11, 3).toISOString(),
     expenses: [
       {
         id: "3-1",
-        name: "Gasolina 95",
+        name: "Gasoline 95",
         unitPrice: 50.0,
         unitType: UnitType.Unit,
         invoiceId: "3",
@@ -80,12 +80,12 @@ export const mockInvoices: Invoice[] = [
   },
   {
     id: "4",
-    name: "Farmácia",
+    name: "Pharmacy",
     createdAt: new Date(2025, 11, 7).toISOString(),
     expenses: [
       {
         id: "4-1",
-        name: "Medicamento A",
+        name: "Medicine A",
         unitPrice: 15.99,
         unitType: UnitType.Unit,
         invoiceId: "4",
@@ -93,7 +93,7 @@ export const mockInvoices: Invoice[] = [
       },
       {
         id: "4-2",
-        name: "Medicamento B",
+        name: "Medicine B",
         unitPrice: 8.5,
         unitType: UnitType.Unit,
         invoiceId: "4",

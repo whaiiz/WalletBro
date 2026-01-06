@@ -20,7 +20,7 @@ export default function ExpensesPage() {
   // Filter and sort expenses
   let filteredExpenses = mockExpenses;
 
-  if (filterCategory !== "Todas") {
+  if (filterCategory !== "All") {
     filteredExpenses = filteredExpenses.filter(
       (e) => e.category === filterCategory
     );
