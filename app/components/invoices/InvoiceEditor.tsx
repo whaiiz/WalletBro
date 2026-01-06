@@ -45,7 +45,7 @@ export function InvoiceEditor({ invoice, onSave, onCancel }: Props) {
       ...prev,
       {
         id,
-        name: "Novo item",
+        name: "New item",
         unitPrice: 0,
         unitType: UnitType.Unit,
         invoiceId: invoice.id,
@@ -72,11 +72,11 @@ export function InvoiceEditor({ invoice, onSave, onCancel }: Props) {
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="absolute inset-0 bg-black opacity-50" onClick={onCancel} />
       <div className="relative w-full max-w-3xl bg-gray-900 border border-gray-700 rounded-lg p-6 text-white shadow-lg z-10">
-        <h3 className="text-xl font-semibold mb-4">Editar Fatura</h3>
+        <h3 className="text-xl font-semibold mb-4">Edit Invoice</h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           <div>
-            <label className="block text-sm text-gray-400 mb-1">Nome</label>
+            <label className="block text-sm text-gray-400 mb-1">Name</label>
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -85,7 +85,7 @@ export function InvoiceEditor({ invoice, onSave, onCancel }: Props) {
           </div>
 
           <div>
-            <label className="block text-sm text-gray-400 mb-1">Data</label>
+            <label className="block text-sm text-gray-400 mb-1">Date</label>
             <input
               type="date"
               value={createdAt}
@@ -97,8 +97,8 @@ export function InvoiceEditor({ invoice, onSave, onCancel }: Props) {
 
         <div className="mb-4">
           <div className="flex items-center justify-between mb-2">
-            <h4 className="font-medium">Despesas</h4>
-            <button onClick={addExpense} className="text-sm text-blue-400">Adicionar</button>
+            <h4 className="font-medium">Expenses</h4>
+            <button onClick={addExpense} className="text-sm text-blue-400">Add</button>
           </div>
 
           <div className="space-y-3 max-h-64 overflow-auto">
@@ -128,7 +128,7 @@ export function InvoiceEditor({ invoice, onSave, onCancel }: Props) {
                     ))}
                   </select>
 
-                  <button onClick={() => removeExpense(idx)} className="text-sm text-red-400">Remover</button>
+                  <button onClick={() => removeExpense(idx)} className="text-sm text-red-400">Remove</button>
                 </div>
               </div>
             ))}
@@ -136,8 +136,8 @@ export function InvoiceEditor({ invoice, onSave, onCancel }: Props) {
         </div>
 
         <div className="flex justify-end gap-3 mt-4">
-          <button onClick={onCancel} className="px-4 py-2 bg-gray-700 rounded">Cancelar</button>
-          <button onClick={save} className="px-4 py-2 bg-green-600 rounded">Guardar</button>
+          <button onClick={onCancel} className="px-4 py-2 bg-gray-700 rounded">Cancel</button>
+          <button onClick={save} className="px-4 py-2 bg-green-600 rounded">Save</button>
         </div>
       </div>
     </div>

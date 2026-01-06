@@ -24,7 +24,7 @@ export function InvoiceCard({
   );
 
   const formattedDate = new Date(invoice.createdAt).toLocaleDateString(
-    "pt-PT",
+    "en-US",
     {
       year: "numeric",
       month: "long",
@@ -50,7 +50,7 @@ export function InvoiceCard({
               €{totalAmount.toFixed(2)}
             </p>
             <p className="text-sm text-gray-400">
-              {invoice.expenses.length} itens
+              {invoice.expenses.length} items
             </p>
           </div>
           <div className="flex items-center gap-3">
@@ -61,7 +61,7 @@ export function InvoiceCard({
               }}
               className="text-sm text-gray-300 hover:text-white bg-gray-700 px-2 py-1 rounded"
             >
-              Editar
+              Edit
             </button>
 
             <svg
@@ -114,13 +114,13 @@ function ExpenseTable({ expenses }: ExpenseTableProps) {
         <thead>
           <tr className="border-b border-gray-700">
             <th className="text-left py-2 px-3 text-gray-300 font-semibold">
-              Descrição
+              Description
             </th>
             <th className="text-right py-2 px-3 text-gray-300 font-semibold">
-              Preço
+              Price
             </th>
             <th className="text-center py-2 px-3 text-gray-300 font-semibold">
-              Unidade
+              Unit
             </th>
           </tr>
         </thead>

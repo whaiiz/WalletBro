@@ -14,16 +14,16 @@ export function ExpenseTable({ expenses }: ExpenseTableProps) {
         <thead>
           <tr className="border-b border-gray-700">
             <th className="px-4 py-3 text-left text-sm font-semibold text-gray-300">
-              Data
+              Date
             </th>
             <th className="px-4 py-3 text-left text-sm font-semibold text-gray-300">
-              Descrição
+              Description
             </th>
             <th className="px-4 py-3 text-left text-sm font-semibold text-gray-300">
-              Categoria
+              Category
             </th>
             <th className="px-4 py-3 text-right text-sm font-semibold text-gray-300">
-              Valor
+              Amount
             </th>
           </tr>
         </thead>
@@ -34,7 +34,7 @@ export function ExpenseTable({ expenses }: ExpenseTableProps) {
               className="border-b border-gray-800 hover:bg-gray-800/50 transition-colors"
             >
               <td className="px-4 py-3 text-sm text-gray-400">
-                {expense.date.toLocaleDateString("pt-PT")}
+                {expense.date.toLocaleDateString("en-US")}
               </td>
               <td className="px-4 py-3 text-sm text-white">
                 <div>

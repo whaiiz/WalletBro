@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 
     if (!response.ok) {
       return Response.json(
-        { error: data.message || "Erro ao registar" },
+        { error: data.message || "Error registering" },
         { status: response.status }
       );
     }
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Register proxy error:", error);
     return Response.json(
-      { error: "Erro ao comunicar com o servidor" },
+      { error: "Error communicating with the server" },
       { status: 500 }
     );
   }

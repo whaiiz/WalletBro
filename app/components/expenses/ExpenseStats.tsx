@@ -23,19 +23,19 @@ export function ExpenseStats({ expenses }: ExpenseStatsProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
       <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
-        <p className="text-sm text-gray-400 mb-2">Total Despesas</p>
+        <p className="text-sm text-gray-400 mb-2">Total Expenses</p>
         <p className="text-3xl font-bold text-white">€{totalExpenses.toFixed(2)}</p>
-        <p className="text-xs text-gray-500 mt-2">{expenses.length} transações</p>
+        <p className="text-xs text-gray-500 mt-2">{expenses.length} transactions</p>
       </div>
 
       <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
-        <p className="text-sm text-gray-400 mb-2">Média por Despesa</p>
+        <p className="text-sm text-gray-400 mb-2">Average per Expense</p>
         <p className="text-3xl font-bold text-blue-400">€{averageExpense.toFixed(2)}</p>
-        <p className="text-xs text-gray-500 mt-2">Por transação</p>
+        <p className="text-xs text-gray-500 mt-2">Per transaction</p>
       </div>
 
       <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
-        <p className="text-sm text-gray-400 mb-2">Categoria Principal</p>
+        <p className="text-sm text-gray-400 mb-2">Top Category</p>
         <p className="text-3xl font-bold text-purple-400">
           {topCategory ? topCategory[0] : "N/A"}
         </p>
@@ -45,11 +45,11 @@ export function ExpenseStats({ expenses }: ExpenseStatsProps) {
       </div>
 
       <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
-        <p className="text-sm text-gray-400 mb-2">Maior Despesa</p>
+        <p className="text-sm text-gray-400 mb-2">Largest Expense</p>
         <p className="text-3xl font-bold text-red-400">
           €{Math.max(...expenses.map((e) => e.amount), 0).toFixed(2)}
         </p>
-        <p className="text-xs text-gray-500 mt-2">Neste período</p>
+        <p className="text-xs text-gray-500 mt-2">In this period</p>
       </div>
     </div>
   );
