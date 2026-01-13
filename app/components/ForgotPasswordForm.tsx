@@ -34,14 +34,25 @@ export function ForgotPasswordForm() {
 
     setLoading(true);
 
-    // Mock async request
     try {
-      await new Promise((res) => setTimeout(res, 900));
-      setMessage({
-        type: "success",
-        text: "If an account with that email exists, we've sent password reset instructions.",
+      const res = await fetch("/api/auth/forgot-password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
       });
-      setEmail("");
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setMessage({ type: "error", text: data?.error || "Erro ao enviar pedido." });
+      } else {
+        setMessage({
+          type: "success",
+          text:
+            data?.message || "If an account with that email exists, we've sent password reset instructions.",
+        });
+        setEmail("");
+      }
     } catch (err) {
       setMessage({ type: "error", text: "Something went wrong. Please try again." });
     } finally {
